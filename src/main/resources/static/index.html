@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+
+    <title>Selenium Demo</title>
+
+</head>
+<body>
+<main role="main">
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3" id="selenium-demo-title">Selenium Demo</h1>
+            <p>
+                This is a demo application created for demonstrating the basic and advanced features of the Selenium WebDriver. It also covers Selenium integration with TestNG (parallel cross-browser execution and reports) and Cucumber (BDD) frameworks. This application is created using Spring Boot, HTML, jQuery and Bootstrap.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link btn-block text-left" data-target="#collapseOne" data-toggle="collapse" type="button">
+                            Basic features
+                        </button>
+                    </h2>
+                </div>
+
+                <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordionExample" id="collapseOne">
+                    <div class="card-body">
+                        <h5 class="card-title">Basic features of Selenium</h5>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-home" id="list-home-list" name="locating-elements" role="tab">
+                                        Locating elements
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-profile" id="list-profile-list" role="tab">
+                                        User actions
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div aria-labelledby="list-home-list" class="tab-pane fade" id="list-home" role="tabpanel">
+                                        <div class="list-group">
+                                            <a class="list-group-item list-group-item-action" href="#">Locating one element</a>
+                                            <a class="list-group-item list-group-item-action" href="#">Locating multiple elements</a>
+                                            <a class="list-group-item list-group-item-action element-selector-strategies" data-toggle="popover" href="#">Element selection strategies</a>
+                                            <a class="list-group-item list-group-item-action relative-locators" data-toggle="popover" href="#">Relative locators</a>
+                                        </div>
+                                    </div>
+
+                                    <div aria-labelledby="list-profile-list" class="tab-pane fade" id="list-profile" role="tabpanel">
+                                        <div class="list-group">
+                                            <ul>
+                                                <li class="list-group-item">Set an element's text</li>
+                                                <li class="list-group-item">Clicking on an element</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <a aria-controls="collapseExample" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapseExample" id="basic-features-demo-btn" name="basic-features-demo-btn" role="button">
+                            Basic features demo
+                        </a>
+                        <br>
+
+                        <div class="collapse container basic-features-demo-class" id="collapseExample">
+                            <hr>
+                            <br>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="alert alert-danger" id="email-empty-alert" role="alert" style="display:none">
+                                        Email address cannot be empty
+                                    </div>
+                                    <div class="alert alert-success" id="registration-success-alert" role="alert" style="display:none">
+                                        <h4 class="alert-heading">Registration successful!</h4>
+                                        <p>Registration is successful. Your account will be setup in 24 hours.</p>
+                                        <hr>
+                                        <p class="mb-0">Once the account is ready, be sure to use email address to login.</p>
+                                    </div>
+                                    <div class="card" id="sign-up-card">
+                                        <header class="card-header">
+                                            <a class="float-right btn btn-outline-primary mt-1" href="#" id="login-btn-link">Log in</a>
+                                            <h4 class="card-title mt-2">Sign up</h4>
+                                        </header>
+                                        <article class="card-body">
+                                            <div class="form-row">
+                                                <div class="col form-group">
+                                                    <label>First name </label>
+                                                    <input class="form-control" placeholder="" type="text">
+                                                </div>
+                                                <div class="col form-group">
+                                                    <label>Last name</label>
+                                                    <input class="form-control" placeholder=" " type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input class="form-control" id="email" placeholder="" type="email">
+                                                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-check form-check-inline">
+                                                    <input class="form-check-input" name="gender" type="radio" value="option1">
+                                                    <span class="form-check-label"> Male </span>
+                                                </label>
+                                                <label class="form-check form-check-inline">
+                                                    <input class="form-check-input" name="gender" type="radio" value="option2">
+                                                    <span class="form-check-label"> Female</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label>City</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Country</label>
+                                                    <select class="form-control" id="inputCountry">
+                                                        <option> Choose...</option>
+                                                        <option selected="">United States</option>
+                                                        <option>India</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Create password</label>
+                                                <input class="form-control" type="password">
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-primary btn-block" id="register-btn" type="button">
+                                                Register
+                                            </button>
+                                            </div>
+                                            <small class="text-muted">
+                                                By clicking the 'Sign Up' button, you confirm that you accept our
+                                                <br>
+                                                Terms of use and Privacy Policy.
+                                            </small>
+                                        </article>
+                                        <div class="border-top card-body text-center">
+                                            Have an account? <a href="#" id="login-link">Log In</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button aria-controls="collapseTwo" id="advancedFeaturesAccordion" aria-expanded="false" class="btn btn-link btn-block text-left collapsed" data-target="#collapseTwo" data-toggle="collapse" type="button">
+                            Advanced features
+                        </button>
+                    </h2>
+                </div>
+                <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample" id="collapseTwo">
+                    <div class="card-body">
+                        <h5 class="card-title">Advanced features of Selenium</h5>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="list-group" id="list-tab1" role="tablist">
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-1" id="list-1-list" role="tab">
+                                        Race conditions
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-2" id="list-2-list" role="tab">
+                                        Dynamic web elements
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-3" id="list-3-list" role="tab">
+                                        JavaScript popup messages
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-4" id="list-4-list" role="tab">
+                                        File upload
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-5" id="list-5-list" role="tab">
+                                        Capture screenshots
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-6" id="list-6-list" role="tab">
+                                        Headless browser
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="tab-content" id="nav-tabContent1">
+                                    <div aria-labelledby="list-1-list" class="tab-pane fade" id="list-1" role="tabpanel">
+                                        <div class="list-group">
+                                            <ul>
+                                                <li class="list-group-item">Explicit wait</li>
+                                                <li class="list-group-item">Implicit wait</li>
+                                                <li class="list-group-item">Fluent wait</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div aria-labelledby="list-2-list" class="tab-pane fade" id="list-2" role="tabpanel">
+                                    </div>
+
+                                    <div aria-labelledby="list-3-list" class="tab-pane fade" id="list-3" role="tabpanel">
+                                        <div class="list-group">
+                                            <ul>
+                                                <li class="list-group-item">Alerts</li>
+                                                <li class="list-group-item">Prompts</li>
+                                                <li class="list-group-item">Confirmations</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div aria-labelledby="list-4-list" class="tab-pane fade" id="list-4" role="tabpanel">
+                                    </div>
+
+                                    <div aria-labelledby="list-5-list" class="tab-pane fade" id="list-5" role="tabpanel">
+                                        <div class="list-group">
+                                            <ul>
+                                                <li class="list-group-item">Current browsing context</li>
+                                                <li class="list-group-item">Specific elements</li>
+                                                <li class="list-group-item">Only on failures (TestNG)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div aria-labelledby="list-6-list" class="tab-pane fade" id="list-6" role="tabpanel">
+                                        <div class="list-group">
+                                            <ul>
+                                                <li class="list-group-item">HtmlUnit</li>
+                                                <li class="list-group-item">Chrome</li>
+                                                <li class="list-group-item">Firefox (Gecko)</li>
+                                                <li class="list-group-item">PhantonJS (suspended)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <a aria-controls="collapseExample1" aria-expanded="false" class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" id="advanced-features-demo-btn" role="button">
+                            Advanced features demo
+                        </a>
+                        <br>
+
+                        <div class="collapse container advanced-features-demo-class" id="collapseExample1">
+                            <hr>
+                            <br>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary" id="time-delay-4sec-btn">4 seconds</button>
+                                <button type="button" class="btn btn-primary" id="time-delay-6sec-btn">6 seconds</button>
+                            </div>
+                            <br><br>
+                            <div class="card-deck mb-3 text-center">
+                                <div class="card mb-4 shadow-sm" id="div2" style="display: none">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">4 seconds</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h1 class="card-title pricing-card-title">4 <small class="text-muted">seconds</small></h1>
+                                        <p>This section took 4 seconds to load. We used Selenium's <b>explicit wait</b> feature to test this behavior.</p>
+                                    </div>
+                                </div>
+                                <div class="card mb-4 shadow-sm" id="div3" style="display: none">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">6 seconds</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h1 class="card-title pricing-card-title">6 <small class="text-muted">seconds</small></h1>
+                                        <p>This section took 6 seconds to load. We used Selenium's <b>fluent wait</b> feature to test this behavior.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <br>
+                            <button class="btn btn-primary" id="add-dynamic-textbox-btn">Add dynamic text boxes</button><br><br>
+                            <div id="dynamic-textboxes" class="col-4">
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary" id="js-alert-btn">Alert</button>
+                                <button type="button" class="btn btn-primary" id="js-prompt-btn">Prompt</button>
+                                <button type="button" class="btn btn-primary" id="js-confirmation-btn">Confirmation</button>
+                            </div>
+                            <br><br>
+                            <p>
+                                Alert response: <span id="alert-response"></span><br><br>
+                                Prompt response: <span id="prompt-response"></span><br><br>
+                                Confirmation response: <span id="confirm-response"></span>
+                            </p>
+                            <hr>
+                            <br>
+                            <div class="alert alert-danger" id="file-empty-alert" role="alert" style="display:none">
+                                Please select an image file to upload
+                            </div>
+                            <input type="file" id="file-upload" name="file-upload">
+                            <button type="button" class="btn btn-primary" id="upload-btn">Upload</button><br><br>
+                            <img src="images/selenium_logo_large.png" width="300" height="100" style="display: none" id="image-section" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link btn-block text-left collapsed" data-target="#collapseThree" data-toggle="collapse" type="button">
+                            Integrations with other frameworks
+                        </button>
+                    </h2>
+                </div>
+                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample" id="collapseThree">
+                    <div class="card-body">
+                        <h5 class="card-title">Integrations with other frameworks</h5>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="list-group">
+                                    <ul>
+                                        <li class="list-group-item">Selenium + TestNG</li>
+                                        <li class="list-group-item">Selenium + Cucumber</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+</main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="application/javascript">
+    $(function () {
+        $('.element-selector-strategies').popover({
+            content: `
+        <ol>
+          <li>class name</li>
+          <li>css selector</li>
+          <li>id</li>
+          <li>name</li>
+          <li>link text</li>
+          <li>partial link text</li>
+          <li>tag name</li>
+          <li>xpath</li>
+        </ol>
+        `,
+            html: true,
+            placement: 'right',
+            title: 'Element selector strategies',
+            trigger: 'focus'
+        });
+
+        $('.relative-locators').popover({
+            content: `
+        <ol>
+          <li>above</li>
+          <li>below</li>
+          <li>toLeftOf</li>
+          <li>toRightOf</li>
+          <li>near</li>
+        </ol>
+        `,
+            html: true,
+            placement: 'right',
+            title: 'Relative locators',
+            trigger: 'focus'
+        });
+
+        $('#login-link').click(function ($e) {
+            $e.preventDefault();
+        });
+
+        $('#login-btn-link').click(function ($e) {
+            $e.preventDefault();
+        });
+
+        $('#register-btn').click(function ($e) {
+            if ('' == $('#email').val()) {
+                $('#email-empty-alert').show();
+                $('#registration-success-alert').hide();
+            } else {
+                $('#email-empty-alert').hide();
+                $('#registration-success-alert').show();
+                $('#sign-up-card').hide();
+            }
+        });
+
+        $("#time-delay-4sec-btn").click(function() {
+            setTimeout(function() {
+                $("#div2").show();
+            }, 4000);
+        });
+
+        $("#time-delay-6sec-btn").click(function() {
+            setTimeout(function() {
+                $("#div3").show();
+            }, 6000);
+        });
+
+        $("#add-dynamic-textbox-btn").click(function() {
+            var content = `
+            <div class="form-row">
+                <div class="col form-group">
+                    <label>Dynamic Textbox</label>
+                    <input class="form-control" placeholder="" type="text">
+                </div>
+            </div>`;
+            $('#dynamic-textboxes').append(content);
+        });
+
+        $("#js-alert-btn").click(function() {
+            alert('This is a JS alert');
+            $("#alert-response").text('OK');
+        });
+
+        $("#js-prompt-btn").click(function() {
+            var name = prompt("Please enter your name:");
+            if (name == null || name == "") {
+                $("#prompt-response").text('');
+            } else {
+                $("#prompt-response").text(name);
+            }
+        });
+
+        $("#js-confirmation-btn").click(function() {
+            if (confirm("Press a button!")) {
+                $("#confirm-response").text('OK');
+            } else {
+                $("#confirm-response").text('Cancel');
+            }
+        });
+
+        $("#upload-btn").click(function() {
+            var fileName = $("#file-upload").val();
+            if ("" == fileName) {
+                $("#file-empty-alert").show();
+                $("#image-section").hide();
+            } else {
+                $("#file-empty-alert").hide();
+                $("#image-section").show();
+            }
+        });
+    });
+</script>
+</body>
+</html>
