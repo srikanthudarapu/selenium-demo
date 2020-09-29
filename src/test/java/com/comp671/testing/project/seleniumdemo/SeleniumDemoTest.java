@@ -21,7 +21,7 @@ public class SeleniumDemoTest {
         driver.manage().window().maximize();
 
         // Open the browser with the specified url. Can be a website or a static html
-        driver.get("file:///Users/srikanthudarapu/IdeaProjects/selenium-demo/src/main/resources/static/index.html");
+        driver.get("http://localhost:8080");
 
         runTest_1(driver);
         runTest_2(driver);
