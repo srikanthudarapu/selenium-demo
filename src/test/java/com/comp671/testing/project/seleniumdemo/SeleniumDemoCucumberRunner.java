@@ -9,4 +9,5 @@ import org.junit.runner.RunWith;
         glue = "com.comp671.testing.project.seleniumdemo",
         features = "features"
 )
-public class SeleniumDemoCucumberRunner {}
+public class SeleniumDemoCucumberRunner {
+}

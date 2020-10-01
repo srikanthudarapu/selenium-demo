@@ -78,7 +78,6 @@ public class SeleniumDemoTestNGTest {
         }
     }
 
-
     // Click on "Basic features demo" will display the section
     @Test
     public void runTest_3() {

@@ -3,7 +3,6 @@ package com.comp671.testing.project.seleniumdemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.tools.ant.util.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -58,7 +57,7 @@ public class StepDefs {
         wait.until(ExpectedConditions.visibilityOf(sectionElement));
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File src = screenshot.getScreenshotAs(OutputType.FILE);
-        File dest = new File("/Users/srikanthudarapu/IdeaProjects/selenium-demo/screenshots/" +System.currentTimeMillis()+".png");
+        File dest = new File("/Users/srikanthudarapu/IdeaProjects/selenium-demo/screenshots/" + System.currentTimeMillis() + ".png");
         Files.copy(src.toPath(), dest.toPath());
     }
 

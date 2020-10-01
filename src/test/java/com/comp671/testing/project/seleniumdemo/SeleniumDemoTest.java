@@ -109,7 +109,6 @@ public class SeleniumDemoTest {
         printStatus(2, pass, reason);
     }
 
-
     // Click on "Basic features demo" will display the section
     private static void runTest_3(WebDriver driver) {
         boolean pass = false;
@@ -263,7 +262,6 @@ public class SeleniumDemoTest {
 
         printStatus(6, pass, reason);
     }
-
 
     // Click on "4 seconds" will load the section in 4 seconds - Explicit wait
     private static void runTest_7(WebDriver driver) {
