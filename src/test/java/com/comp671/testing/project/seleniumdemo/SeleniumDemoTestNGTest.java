@@ -2,7 +2,10 @@ package com.comp671.testing.project.seleniumdemo;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -19,11 +22,17 @@ public class SeleniumDemoTestNGTest {
     @BeforeClass
     public void setup(String browser) {
         if ("firefox".equals(browser)) {
+            FirefoxBinary firefoxBinary = new FirefoxBinary();
+            firefoxBinary.addCommandLineOptions("--headless");
             System.setProperty("webdriver.gecko.driver", "/Users/srikanthudarapu/selenium-binaries/geckodriver");
-            driver = new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setBinary(firefoxBinary);
+            driver = new FirefoxDriver(firefoxOptions);
         } else {
+            ChromeOptions options = new ChromeOptions();
+            options.setHeadless(true);
             System.setProperty("webdriver.chrome.driver", "/Users/srikanthudarapu/selenium-binaries/chromedriver");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
 
         // Browser customization option
@@ -235,9 +244,11 @@ public class SeleniumDemoTestNGTest {
         dynamicTextboxBtn.click();
 
         // Wait for 2 seconds
-        WebDriverWait wait = new WebDriverWait(driver, 2);
+        WebDriverWait wait = new WebDriverWait(driver, 3);
         WebElement dynamicTextboxesSection = driver.findElement(By.id("dynamic-textboxes"));
         List<WebElement> dynamicTextboxes = dynamicTextboxesSection.findElements(By.xpath("div/div/input"));
+        wait.until(ExpectedConditions.visibilityOf(dynamicTextboxes.get(0)));
+
         Assert.assertTrue(dynamicTextboxes.size() == 1, "Dynamic textbox is not displayed");
     }
 
